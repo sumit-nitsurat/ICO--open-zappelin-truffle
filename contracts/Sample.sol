@@ -123,7 +123,7 @@ contract Sample is ERC20, Ownable {
     }
 
     // ------------------------------------------------------------------------
-    // 1,000 FWD Tokens per 1 ETH
+    // 1,000 Sample Tokens per 1 ETH
     // ------------------------------------------------------------------------
     function () public payable {
         require(now >= startDate && now <= endDate);
