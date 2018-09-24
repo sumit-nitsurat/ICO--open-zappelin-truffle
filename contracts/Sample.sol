@@ -34,6 +34,8 @@ contract Sample is ERC20, Ownable {
         name = "Sample Token";
         decimals = 18;
         _totalSupply = 1000;
+        balance[owner] = _totalSupply;
+        emit Transfer(address(0), owner, _totalSupply);
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;
     }
@@ -43,7 +45,7 @@ contract Sample is ERC20, Ownable {
     // Total supply
     // ------------------------------------------------------------------------
     function totalSupply() public view returns (uint) {
-        return _totalSupply - balances[address(0)];
+        return _totalSupply.sub(balances[address(0)]);
     }
 
 
