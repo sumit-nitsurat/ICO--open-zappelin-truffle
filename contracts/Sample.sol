@@ -33,9 +33,6 @@ contract Sample is ERC20, Ownable {
         symbol = "LKP";
         name = "Sample Token";
         decimals = 18;
-        _totalSupply = 1000;
-        balance[owner] = _totalSupply;
-        emit Transfer(address(0), owner, _totalSupply);
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;
     }
